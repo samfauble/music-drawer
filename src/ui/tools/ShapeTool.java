@@ -1,6 +1,8 @@
 package ui.tools;
 
 
+import model.Oval;
+import model.Rectangle;
 import model.Shape;
 import ui.DrawingEditor;
 
@@ -9,8 +11,8 @@ import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.awt.event.MouseEvent;
 
-public class ShapeTool extends Tool {
-	private Shape shape;
+    abstract public class ShapeTool extends Tool {
+	protected Shape shape;
 
     public ShapeTool(DrawingEditor editor, JComponent parent) {
 		super(editor, parent);
@@ -65,9 +67,7 @@ public class ShapeTool extends Tool {
 	}
 
 	//EFFECTS: Constructs and returns the new shape
-	private void makeShape(MouseEvent e) {
-		shape = new Shape(e.getPoint(), editor.getMidiSynth());
-	}
+	abstract void makeShape(MouseEvent e);
 
 	private class ShapeToolClickHandler implements ActionListener {
 

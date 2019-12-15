@@ -6,18 +6,18 @@ import sound.MidiSynth;
 import java.awt.*;
 
 
-public class Shape {
-    private static Color PLAYING_COLOR;
+    abstract public class Shape {
+    protected Color PLAYING_COLOR;
 
-    private int x;
-    private int y;
-    private int width;
-    private int height;
+    protected int x;
+    protected int y;
+    protected int width;
+    protected int height;
 
     private boolean selected;
 
     private MidiSynth midiSynth;
-    private int instrument;
+    protected int instrument;
     private int playLineCoord;
 
 
@@ -127,16 +127,14 @@ public class Shape {
             stopPlaying();
         }
     }
-
+// TODO: This is for new Rectangle class
     //EFFECTS: draws the shape
-    private void drawGraphics(Graphics g) {
-        g.drawRect(x, y, width, height);
-    }
+    abstract void drawGraphics(Graphics g);
 
+        // TODO: This is for new Rectangle class
     //EFFECTS: fills the shape
-    private void fillGraphics(Graphics g) {
-        g.fillRect(x, y, width, height);
-    }
+    abstract void fillGraphics(Graphics g);
+
 
 
     // EFFECTS: starts playing this Shape, where sound is dependent on the area/coordinates of the Shape
