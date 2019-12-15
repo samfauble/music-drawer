@@ -202,7 +202,7 @@ public class DrawingEditor extends JFrame {
             handleMouseDragged(translateEvent(e));
         }
 
-		// EFFECTS: translates the mouse event to current drawing's coordinate system
+		// EFFECTS: translates the mouse event to current drawing's coordinate sys
         private MouseEvent translateEvent(MouseEvent e) {
             return SwingUtilities.convertMouseEvent(e.getComponent(), e, currentDrawing);
         }
